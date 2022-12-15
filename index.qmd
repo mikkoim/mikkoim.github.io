@@ -1,0 +1,48 @@
+---
+title: "Mikko Impiö"
+image: profile.jpg
+about:
+  id: hero-heading
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/mikkoimpio
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/mikkoimpio/
+    - icon: github
+      text: Github
+      href: https://github.com/mikkoim/
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=fBDisEYAAAAJ&hl=fi
+
+listing:
+  - id: blog-listing
+    contents: blog
+    sort: "date desc"
+    type: default
+    max-items: 3
+---
+
+
+:::{#hero-heading}
+I am a researcher at the Finnish Environment Institute SYKE, focusing on applying machine learning and computer vision to environmental problems, especially biodiversity monitoring.
+:::
+
+## [Blog](blog.qmd)
+
+:::{#blog-listing}
+:::
+
+
+## [Publications](publications.qmd)
+
+Impiö, Mikko, et al. "Habitat classification from satellite observations with sparse annotations." *arXiv preprint arXiv:2209.12995* (2022). 
+[Paper](https://arxiv.org/abs/2209.12995)
+
+Impiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. "Multi-level reversible encryption for ECG signals using compressive sensing." ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021.
+[Paper](https://arxiv.org/abs/2104.05325) | [Code](https://github.com/mikkoim/ECG-CS)

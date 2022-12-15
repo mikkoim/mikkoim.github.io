@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "blog/welcome/index.html",
+    "href": "blog/welcome/index.html",
+    "title": "Test post",
+    "section": "",
+    "text": "Nothing here yet."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Hello there! This is my blog where I might post something in the future.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nTest post\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nDec 15, 2022\n\n\nMikko Impiö\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mikko Impiö",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n  \n    \n     Google Scholar\n  \n\n  \n  \nI am a researcher at the Finnish Environment Institute SYKE, focusing on applying machine learning and computer vision to environmental problems, especially biodiversity monitoring."
+  },
+  {
+    "objectID": "index.html#blog",
+    "href": "index.html#blog",
+    "title": "Mikko Impiö",
+    "section": "Blog",
+    "text": "Blog\n\n\n\n\n  \n\n\n\n\nTest post\n\n\n\n\n\n\n\n\n\n\n\n\nDec 15, 2022\n\n\nMikko Impiö\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#publications",
+    "href": "index.html#publications",
+    "title": "Mikko Impiö",
+    "section": "Publications",
+    "text": "Publications\nImpiö, Mikko, et al. “Habitat classification from satellite observations with sparse annotations.” arXiv preprint arXiv:2209.12995 (2022). Paper\nImpiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. “Multi-level reversible encryption for ECG signals using compressive sensing.” ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021. Paper | Code"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Impiö, Mikko, et al. “Habitat classification from satellite observations with sparse annotations.” arXiv preprint arXiv:2209.12995 (2022). Paper\nImpiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. “Multi-level reversible encryption for ECG signals using compressive sensing.” ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]

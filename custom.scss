@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+
+$cadet-blue-crayola: #A3B4C8ff;
+$middle-grey: #8C8072ff;
+$jet: #353439ff;
+$moss-green: #858758ff;
+$alice-blue: #F3F8FDff;
+$cerulean-frost: #6E98BDff;
+
+$link-color: $cerulean-frost;
+
+/*-- scss:rules --*/
+
+h2 a {
+    text-decoration: none !important;
+}
+
+h1, h2, h3{
+    color: $jet !important;
+}

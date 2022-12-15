@@ -1,0 +1,17 @@
+---
+title: "Publications"
+listing:
+  contents: publications
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+---
+
+Impiö, Mikko, et al. "Habitat classification from satellite observations with sparse annotations." *arXiv preprint arXiv:2209.12995* (2022). 
+[Paper](https://arxiv.org/abs/2209.12995)
+
+Impiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. "Multi-level reversible encryption for ECG signals using compressive sensing." ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021.
+[Paper](https://arxiv.org/abs/2104.05325) | [Code](https://github.com/mikkoim/ECG-CS)

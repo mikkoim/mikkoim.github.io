@@ -1,0 +1,10 @@
+---
+title: "Test post"
+author: "Mikko Impiö"
+date: "2022-12-15"
+categories: [news]
+---
+
+Nothing here yet.
+
+![](bugs-color.png){width="100em"}
