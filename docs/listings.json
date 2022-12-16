@@ -14,5 +14,11 @@
   {
     "listing": "/publications.html",
     "items": []
+  },
+  {
+    "listing": "/resources.html",
+    "items": [
+      "/resources/puhti_cheat_sheet.html"
+    ]
   }
 ]

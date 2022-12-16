@@ -1,0 +1,6 @@
+---
+title: "Resources"
+listing:
+  contents: resources
+  template: resources/listing.ejs
+---

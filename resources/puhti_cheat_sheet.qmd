@@ -1,0 +1,192 @@
+---
+title: Puhti cheat sheet
+toc: true
+date: "2022-03-17"
+date-modified: "2022-12-15"
+---
+
+This document was originally written for a SYKE machine learning network seminar talk on 17.3.2022, but has been extended 
+
+For the most current and correct information, see the CSC docs at <https://docs.csc.fi/>. 
+
+CSC has excellent documentation and [tutorials](https://docs.csc.fi/support/tutorials/) that can help in most problems
+
+## SSH tunneling for Jupyter / Dask
+
+Sometimes you have to access applications inside a compute node. This can be done with two SSH tunnels. The compute node numbers are just examples and you should change them to the actual compute node you are using.
+
+### 1. Start up a compute node
+
+Take note of the node number. In this case, let's say that it is `r06c56`.
+
+### 2. Start up your application
+
+It could be jupyter, dask, tensorboard or something else. In this case, let's say that the application port is `8787`.
+
+### 3. Open up a new Puhti terminal
+
+Connect to the compute node:
+```bash
+ssh r06c56 -L 8890:localhost:8787
+```
+`8890` is the port that is forwarded to your computer. Depending on the login node, this might be in use, but it can be anything.
+
+### 4. Connect to Puhti from your local machine
+
+Connect to a puhti login node on your local (unix) terminal
+```bash
+ssh $USER@puhti.csc.fi -L 8787:localhost:8890
+```
+
+Note that `$USER` needs to be your CSC username.
+
+Make sure your local terminal connects to the same login node in puhti!
+If the Puhti login node in step 3 is for example puhti-login1, you have to specify `$USER@puhti-login1.csc.fi` locally.
+
+You should be able to see your application running in `localhost:8787/` or whatever your port is.
+
+
+## Module Loading
+```bash
+module load <module>
+```
+
+If a package is missing, run
+```bash
+pip install --user <package>
+```
+
+## ```environment.yml``` example
+If the modules are not enough, use a conda environment inside a singularity shell. The environment is defined with a ```environment.yml``` file.
+
+```yaml
+name: env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+
+  <other conda packages here>
+
+  - pip
+  - pip:
+    <pip packages not installable by conda here>
+```
+
+## Dockerfile that builds a cuda-enabled conda environment
+
+```dockerfile
+FROM nvidia/cuda:11.4.2-cudnn8-runtime-ubuntu20.04
+
+COPY environment.yml .
+
+RUN apt-get update --fix-missing && \
+    apt-get install -y git wget vim unzip bzip2 sudo build-essential ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda.sh && \
+    /bin/bash Miniconda.sh -b -p /opt/conda && \
+    rm Miniconda.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    /opt/conda/bin/conda install -n base -c conda-forge mamba && \
+    /opt/conda/bin/mamba update -n base mamba && \
+    /opt/conda/bin/mamba env create --file environment.yml &&\
+    /opt/conda/bin/mamba clean -a -y
+
+ENV PATH /opt/conda/bin:$PATH
+```
+
+## Makefile for building the Docker environments and singularity containers
+
+In general, Makefiles are an excellent method for reproducible code that documents your process and commands at the same time.
+
+Running example: 
+```bash
+make docker
+```
+
+Makefile:
+```bash
+docker:
+	docker build . -t cuda-conda
+
+singularity:
+	sudo singularity build Env.sif docker-daemon://cuda-conda:latest
+```
+
+## Useful additions to `~/.bashrc`
+
+ Some contributed by Janne Mäyrä
+
+```bash
+# Start a interactive GPU instance
+# Args:
+#   $1: time in hours
+#   $2: RAM, for example '8G'
+#   $3: SSD in G, for example '16' for 16GB
+gpushell() {
+        srun -p gpu --gres=gpu:v100:1,nvme:"$3" -c 4 -t "$1":00:00 --mem "$2" --account=$PROJECT --pty bash
+}
+
+# Start a interactive CPU instance
+# Args:
+#   $1: time in hours
+#   $2: RAM, for example '8G'
+#   $3: SSD in G, for example '16' for 16GB
+cpushell() {
+        sinteractive --account $PROJECT --time "$1":00:00 --mem "$2" --tmp "$3"
+}
+
+# Start a interactive CPU instance with more than 8 cores
+# Args:
+#   $1: time in hours
+#   $2: RAM, for example '8G'
+#   $3: SSD in G, for example '16' for 16GB
+#   $4: number of cores
+smallshell() {
+        srun -p small --gres=nvme:"$3" --account $PROJECT --time "$1":00:00 --mem "$2" -c "$4" --pty bash
+}
+
+# Start a jupyter server
+# Args:
+#   $1: output port, arbitary
+jpt() {
+        jupyter-lab --no-browser --port $1
+}
+
+# tunnel to a jupyter server, sets local port to 8888
+# Args:
+#   $1: remote port, set above
+#   $2: compute node, for example 'r06c52'
+jptt() {
+        ssh -NL 8888:localhost:$1 $USER@"$2".bullx
+}
+
+# Start python in singularity
+# Args:
+#   $1: singularity container, .sif file
+#   $2: conda environment name
+#   $3: arguments to 'python'    
+singpy() {
+    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/python "${@:3}"
+}
+
+# Start ipython in singularity
+# Args:
+#   $1: singularity container, .sif file
+#   $2: conda environment name
+singipy() {
+    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/ipython
+}
+
+# Start a singularity shell
+# remember to run 'bash --login' and to activate conda environment if necessary
+# Args:
+#   $1: singularity container, .sif file
+singshell() {
+    singularity shell --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1
+}
+```

@@ -10,6 +10,7 @@ website:
         text: About
       - blog.qmd
       - publications.qmd
+      - resources.qmd
       - icon: github
         href: https://github.com/
       - icon: twitter

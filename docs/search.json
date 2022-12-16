@@ -40,5 +40,61 @@
     "title": "Publications",
     "section": "",
     "text": "Impiö, Mikko, et al. “Habitat classification from satellite observations with sparse annotations.” arXiv preprint arXiv:2209.12995 (2022). Paper\nImpiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. “Multi-level reversible encryption for ECG signals using compressive sensing.” ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html",
+    "href": "resources/puhti_cheat_sheet.html",
+    "title": "Puhti cheat sheet",
+    "section": "",
+    "text": "This document was originally written for a SYKE machine learning network seminar talk on 17.3.2022, but has been extended\nFor the most current and correct information, see the CSC docs at https://docs.csc.fi/.\nCSC has excellent documentation and tutorials that can help in most problems"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#ssh-tunneling-for-jupyter-dask",
+    "href": "resources/puhti_cheat_sheet.html#ssh-tunneling-for-jupyter-dask",
+    "title": "Puhti cheat sheet",
+    "section": "SSH tunneling for Jupyter / Dask",
+    "text": "SSH tunneling for Jupyter / Dask\nSometimes you have to access applications inside a compute node. This can be done with two SSH tunnels. The compute node numbers are just examples and you should change them to the actual compute node you are using.\n\n1. Start up a compute node\nTake note of the node number. In this case, let’s say that it is r06c56.\n\n\n2. Start up your application\nIt could be jupyter, dask, tensorboard or something else. In this case, let’s say that the application port is 8787.\n\n\n3. Open up a new Puhti terminal\nConnect to the compute node:\nssh r06c56 -L 8890:localhost:8787\n8890 is the port that is forwarded to your computer. Depending on the login node, this might be in use, but it can be anything.\n\n\n4. Connect to Puhti from your local machine\nConnect to a puhti login node on your local (unix) terminal\nssh $USER@puhti.csc.fi -L 8787:localhost:8890\nNote that $USER needs to be your CSC username.\nMake sure your local terminal connects to the same login node in puhti! If the Puhti login node in step 3 is for example puhti-login1, you have to specify $USER@puhti-login1.csc.fi locally.\nYou should be able to see your application running in localhost:8787/ or whatever your port is."
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#module-loading",
+    "href": "resources/puhti_cheat_sheet.html#module-loading",
+    "title": "Puhti cheat sheet",
+    "section": "Module Loading",
+    "text": "Module Loading\nmodule load <module>\nIf a package is missing, run\npip install --user <package>"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#environment.yml-example",
+    "href": "resources/puhti_cheat_sheet.html#environment.yml-example",
+    "title": "Puhti cheat sheet",
+    "section": "environment.yml example",
+    "text": "environment.yml example\nIf the modules are not enough, use a conda environment inside a singularity shell. The environment is defined with a environment.yml file.\nname: env\nchannels:\n  - pytorch\n  - conda-forge\n  - defaults\ndependencies:\n  - python=3.9\n\n  <other conda packages here>\n\n  - pip\n  - pip:\n    <pip packages not installable by conda here>"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#dockerfile-that-builds-a-cuda-enabled-conda-environment",
+    "href": "resources/puhti_cheat_sheet.html#dockerfile-that-builds-a-cuda-enabled-conda-environment",
+    "title": "Puhti cheat sheet",
+    "section": "Dockerfile that builds a cuda-enabled conda environment",
+    "text": "Dockerfile that builds a cuda-enabled conda environment\nFROM nvidia/cuda:11.4.2-cudnn8-runtime-ubuntu20.04\n\nCOPY environment.yml .\n\nRUN apt-get update --fix-missing && \\\n    apt-get install -y git wget vim unzip bzip2 sudo build-essential ca-certificates && \\\n    apt-get clean && \\\n    rm -rf /var/lib/apt/lists/*\n\nRUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda.sh && \\\n    /bin/bash Miniconda.sh -b -p /opt/conda && \\\n    rm Miniconda.sh && \\\n    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \\\n    /opt/conda/bin/conda install -n base -c conda-forge mamba && \\\n    /opt/conda/bin/mamba update -n base mamba && \\\n    /opt/conda/bin/mamba env create --file environment.yml &&\\\n    /opt/conda/bin/mamba clean -a -y\n\nENV PATH /opt/conda/bin:$PATH"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#makefile-for-building-the-docker-environments-and-singularity-containers",
+    "href": "resources/puhti_cheat_sheet.html#makefile-for-building-the-docker-environments-and-singularity-containers",
+    "title": "Puhti cheat sheet",
+    "section": "Makefile for building the Docker environments and singularity containers",
+    "text": "Makefile for building the Docker environments and singularity containers\nIn general, Makefiles are an excellent method for reproducible code that documents your process and commands at the same time.\nRunning example:\nmake docker\nMakefile:\ndocker:\n    docker build . -t cuda-conda\n\nsingularity:\n    sudo singularity build Env.sif docker-daemon://cuda-conda:latest"
+  },
+  {
+    "objectID": "resources/puhti_cheat_sheet.html#useful-additions-to-.bashrc",
+    "href": "resources/puhti_cheat_sheet.html#useful-additions-to-.bashrc",
+    "title": "Puhti cheat sheet",
+    "section": "Useful additions to ~/.bashrc",
+    "text": "Useful additions to ~/.bashrc\nSome contributed by Janne Mäyrä\n# Start a interactive GPU instance\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\ngpushell() {\n        srun -p gpu --gres=gpu:v100:1,nvme:\"$3\" -c 4 -t \"$1\":00:00 --mem \"$2\" --account=$PROJECT --pty bash\n}\n\n# Start a interactive CPU instance\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\ncpushell() {\n        sinteractive --account $PROJECT --time \"$1\":00:00 --mem \"$2\" --tmp \"$3\"\n}\n\n# Start a interactive CPU instance with more than 8 cores\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\n#   $4: number of cores\nsmallshell() {\n        srun -p small --gres=nvme:\"$3\" --account $PROJECT --time \"$1\":00:00 --mem \"$2\" -c \"$4\" --pty bash\n}\n\n# Start a jupyter server\n# Args:\n#   $1: output port, arbitary\njpt() {\n        jupyter-lab --no-browser --port $1\n}\n\n# tunnel to a jupyter server, sets local port to 8888\n# Args:\n#   $1: remote port, set above\n#   $2: compute node, for example 'r06c52'\njptt() {\n        ssh -NL 8888:localhost:$1 $USER@\"$2\".bullx\n}\n\n# Start python in singularity\n# Args:\n#   $1: singularity container, .sif file\n#   $2: conda environment name\n#   $3: arguments to 'python'    \nsingpy() {\n    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/python \"${@:3}\"\n}\n\n# Start ipython in singularity\n# Args:\n#   $1: singularity container, .sif file\n#   $2: conda environment name\nsingipy() {\n    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/ipython\n}\n\n# Start a singularity shell\n# remember to run 'bash --login' and to activate conda environment if necessary\n# Args:\n#   $1: singularity container, .sif file\nsingshell() {\n    singularity shell --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1\n}"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Puhti cheat sheet\n\n\nNo matching items"
   }
 ]
