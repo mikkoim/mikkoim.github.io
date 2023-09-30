@@ -10,8 +10,11 @@ listing:
 page-layout: full
 ---
 
-Impiö, Mikko, et al. "Habitat classification from satellite observations with sparse annotations." *arXiv preprint arXiv:2209.12995* (2022). 
+de Schaetzen, F., [Impiö, M.]{.underline}, Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., ... & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution.
+[Paper](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14130)
+
+[Impiö, M.]{.underline}, Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995.
 [Paper](https://arxiv.org/abs/2209.12995)
 
-Impiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. "Multi-level reversible encryption for ECG signals using compressive sensing." ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021.
+[Impiö, M.]{.underline}, Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE.
 [Paper](https://arxiv.org/abs/2104.05325) | [Code](https://github.com/mikkoim/ECG-CS)

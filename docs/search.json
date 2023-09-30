@@ -32,14 +32,14 @@
     "href": "index.html#publications",
     "title": "Mikko Impiö",
     "section": "Publications",
-    "text": "Publications\nImpiö, Mikko, et al. “Habitat classification from satellite observations with sparse annotations.” arXiv preprint arXiv:2209.12995 (2022). Paper\nImpiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. “Multi-level reversible encryption for ECG signals using compressive sensing.” ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021. Paper | Code"
+    "text": "Publications\nImpiö, M., Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995. Paper\nImpiö, M., Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE. Paper | Code\nde Schaetzen, F., Impiö, M., Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., … & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution. Paper"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Impiö, Mikko, et al. “Habitat classification from satellite observations with sparse annotations.” arXiv preprint arXiv:2209.12995 (2022). Paper\nImpiö, Mikko, Mehmet Yamaç, and Jenni Raitoharju. “Multi-level reversible encryption for ECG signals using compressive sensing.” ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2021. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "de Schaetzen, F., Impiö, M., Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., … & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution. Paper\nImpiö, M., Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995. Paper\nImpiö, M., Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/puhti_cheat_sheet.html",
@@ -60,14 +60,14 @@
     "href": "resources/puhti_cheat_sheet.html#module-loading",
     "title": "Puhti cheat sheet",
     "section": "Module Loading",
-    "text": "Module Loading\nmodule load <module>\nIf a package is missing, run\npip install --user <package>"
+    "text": "Module Loading\nmodule load &lt;module&gt;\nIf a package is missing, run\npip install --user &lt;package&gt;"
   },
   {
     "objectID": "resources/puhti_cheat_sheet.html#environment.yml-example",
     "href": "resources/puhti_cheat_sheet.html#environment.yml-example",
     "title": "Puhti cheat sheet",
     "section": "environment.yml example",
-    "text": "environment.yml example\nIf the modules are not enough, use a conda environment inside a singularity shell. The environment is defined with a environment.yml file.\nname: env\nchannels:\n  - pytorch\n  - conda-forge\n  - defaults\ndependencies:\n  - python=3.9\n\n  <other conda packages here>\n\n  - pip\n  - pip:\n    <pip packages not installable by conda here>"
+    "text": "environment.yml example\nIf the modules are not enough, use a conda environment inside a singularity shell. The environment is defined with a environment.yml file.\nname: env\nchannels:\n  - pytorch\n  - conda-forge\n  - defaults\ndependencies:\n  - python=3.9\n\n  &lt;other conda packages here&gt;\n\n  - pip\n  - pip:\n    &lt;pip packages not installable by conda here&gt;"
   },
   {
     "objectID": "resources/puhti_cheat_sheet.html#dockerfile-that-builds-a-cuda-enabled-conda-environment",
@@ -96,5 +96,12 @@
     "title": "Resources",
     "section": "",
     "text": "Puhti cheat sheet\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#code",
+    "href": "index.html#code",
+    "title": "Mikko Impiö",
+    "section": "Code",
+    "text": "Code\n\nTaxonomist - a species classification pipeline\nA modular, extensible framework for training deep learning models for species classification.\n\n\nPoint-EO - Python library for training machine learning models on point-based geospatial data and large rasters\nA python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.\n\n\nOther projects in Github"
   }
 ]
