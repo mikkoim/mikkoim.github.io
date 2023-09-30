@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "blog/welcome/index.html",
-    "href": "blog/welcome/index.html",
-    "title": "Test post",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
     "section": "",
-    "text": "Nothing here yet."
+    "text": "Puhti cheat sheet\n\n\nNo matching items"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "de Schaetzen, F., Impiö, M., Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., … & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution. Paper\nImpiö, M., Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995. Paper\nImpiö, M., Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog.html",
@@ -12,6 +19,13 @@
     "title": "Blog",
     "section": "",
     "text": "Hello there! This is my blog where I might post something in the future.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nTest post\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nDec 15, 2022\n\n\nMikko Impiö\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/welcome/index.html",
+    "href": "blog/welcome/index.html",
+    "title": "Test post",
+    "section": "",
+    "text": "Nothing here yet."
   },
   {
     "objectID": "index.html",
@@ -35,11 +49,11 @@
     "text": "Publications\nImpiö, M., Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995. Paper\nImpiö, M., Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE. Paper | Code\nde Schaetzen, F., Impiö, M., Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., … & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution. Paper"
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "de Schaetzen, F., Impiö, M., Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., … & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution. Paper\nImpiö, M., Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995. Paper\nImpiö, M., Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE. Paper | Code\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "index.html#code",
+    "href": "index.html#code",
+    "title": "Mikko Impiö",
+    "section": "Code",
+    "text": "Code\n\nTaxonomist - a species classification pipeline\nA modular, extensible framework for training deep learning models for species classification.\n\n\nPoint-EO - Python library for training machine learning models on point-based geospatial data and large rasters\nA python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.\n\n\nOther projects in Github"
   },
   {
     "objectID": "resources/puhti_cheat_sheet.html",
@@ -89,19 +103,5 @@
     "title": "Puhti cheat sheet",
     "section": "Useful additions to ~/.bashrc",
     "text": "Useful additions to ~/.bashrc\nSome contributed by Janne Mäyrä\n# Start a interactive GPU instance\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\ngpushell() {\n        srun -p gpu --gres=gpu:v100:1,nvme:\"$3\" -c 4 -t \"$1\":00:00 --mem \"$2\" --account=$PROJECT --pty bash\n}\n\n# Start a interactive CPU instance\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\ncpushell() {\n        sinteractive --account $PROJECT --time \"$1\":00:00 --mem \"$2\" --tmp \"$3\"\n}\n\n# Start a interactive CPU instance with more than 8 cores\n# Args:\n#   $1: time in hours\n#   $2: RAM, for example '8G'\n#   $3: SSD in G, for example '16' for 16GB\n#   $4: number of cores\nsmallshell() {\n        srun -p small --gres=nvme:\"$3\" --account $PROJECT --time \"$1\":00:00 --mem \"$2\" -c \"$4\" --pty bash\n}\n\n# Start a jupyter server\n# Args:\n#   $1: output port, arbitary\njpt() {\n        jupyter-lab --no-browser --port $1\n}\n\n# tunnel to a jupyter server, sets local port to 8888\n# Args:\n#   $1: remote port, set above\n#   $2: compute node, for example 'r06c52'\njptt() {\n        ssh -NL 8888:localhost:$1 $USER@\"$2\".bullx\n}\n\n# Start python in singularity\n# Args:\n#   $1: singularity container, .sif file\n#   $2: conda environment name\n#   $3: arguments to 'python'    \nsingpy() {\n    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/python \"${@:3}\"\n}\n\n# Start ipython in singularity\n# Args:\n#   $1: singularity container, .sif file\n#   $2: conda environment name\nsingipy() {\n    singularity run --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1 /opt/conda/envs/$2/bin/ipython\n}\n\n# Start a singularity shell\n# remember to run 'bash --login' and to activate conda environment if necessary\n# Args:\n#   $1: singularity container, .sif file\nsingshell() {\n    singularity shell --nv -B $SCRATCH:$SCRATCH -B $TMPDIR:$TMPDIR -H ~ $1\n}"
-  },
-  {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Puhti cheat sheet\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#code",
-    "href": "index.html#code",
-    "title": "Mikko Impiö",
-    "section": "Code",
-    "text": "Code\n\nTaxonomist - a species classification pipeline\nA modular, extensible framework for training deep learning models for species classification.\n\n\nPoint-EO - Python library for training machine learning models on point-based geospatial data and large rasters\nA python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.\n\n\nOther projects in Github"
   }
 ]
