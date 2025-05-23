@@ -3,13 +3,10 @@ title: "Mikko Impiö"
 image: profile.jpg
 about:
   id: hero-heading
-  template: trestles
+  template: jolla
   image-shape: round
-  image-width: 15em
+  image-width: 10em
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/mikkoimpio
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/mikkoimpio/
@@ -19,6 +16,9 @@ about:
     - icon: mortarboard-fill
       text: Google Scholar
       href: https://scholar.google.com/citations?user=fBDisEYAAAAJ&hl=fi
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/mikkoimpio.bsky.social
 
 listing:
   - id: blog-listing
@@ -30,7 +30,18 @@ listing:
 
 
 :::{#hero-heading}
-I am a researcher at the Finnish Environment Institute SYKE, focusing on applying machine learning and computer vision to environmental problems, especially biodiversity monitoring.
+**I am a researcher and PhD candidate at the Finnish Environment Institute (Syke), working on deep learning and computer vision for or environmental monitoring.**
+
+My work focuses on topics like fine-grained classification, out-of-distribution detection and multimodal learning from images, videos and DNA data, with applications in biodiversity monitoring and remote sensing.
+
+I hold a MSc in Electrical Engineering from Tampere University, with a major in Signal Processing. During my studies I completed internships at Intel, where I worked with 3A algorithms, and at Vaisala, focusing on deep learning methods for predictive maintenance.
+
+I am a member in several expert groups, including:
+
+- **EIONET Data and Digitalization** (European Environment Agency).
+- **Lukki**, Finland's national coordination group for nature information.
+- **GEO AI4EO**, a GEO subgroup focused on geospatial AI for Earth Observation.
+
 :::
 
 ## [Blog](blog.qmd)
@@ -40,6 +51,12 @@ I am a researcher at the Finnish Environment Institute SYKE, focusing on applyin
 
 
 ## [Publications](publications.qmd)
+
+[Impiö, M.]{.underline}, Raitoharju, J. (2025). Efficient curation of invertebrate image datasets using feature embeddings and automatic size comparison. In 2025 IEEE Symposia on Computational Intelligence for Energy, Transport and Environmental Sustainability (CIETES). IEEE.
+[Paper](https://arxiv.org/pdf/2412.15844?) | [Code](https://github.com/mikkoim/taxonomist-studio)
+
+[Impiö, M.]{.underline}, Raitoharju, J. (2024). Improving taxonomic image-based out-of-distribution detection with DNA barcodes. In 2024 32nd European Signal Processing Conference (EUSIPCO). IEEE.
+[Paper](https://arxiv.org/pdf/2406.18999)
 
 [Impiö, M.]{.underline}, Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995.
 [Paper](https://arxiv.org/abs/2209.12995)
@@ -52,11 +69,19 @@ de Schaetzen, F., [Impiö, M.]{.underline}, Wagner, B., Nienaltowski, P., Arnold
 
 ## Code
 
-#### [Taxonomist](https://github.com/mikkoim/taxonomist) - a species classification pipeline
+#### [`dinotool`](https://github.com/mikkoim/dinotool)
 
-A modular, extensible framework for training deep learning models for species classification.
+Command-line tool for extracting DINO features for images and videos 
 
-#### [Point-EO](https://github.com/sykefi/point-eo) - Python library for training machine learning models on point-based geospatial data and large rasters
+#### [`taxonomist`](https://github.com/mikkoim/taxonomist)
+
+A library for training deep learning models for species classification.
+
+#### [`tiers`](https://github.com/mikkoim/tiers)
+
+A hierarchical label handling library for Python
+
+#### [`point-eo`](https://github.com/sykefi/point-eo)
 
 A python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.
 

@@ -14,12 +14,10 @@ website:
       - resources.qmd
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
   google-analytics:
     tracking-id: "G-C434H3550N"
     storage: none
 
 format:
   html:
-    theme: [litera, custom.scss]
+    theme: [cosmo, custom.scss]

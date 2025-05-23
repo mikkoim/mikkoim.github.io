@@ -1,20 +1,19 @@
 ---
 title: "Publications"
-listing:
-  contents: publications
-  sort: "date desc"
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
 page-layout: full
 ---
 
-de Schaetzen, F., [Impiö, M.]{.underline}, Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., ... & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution.
-[Paper](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14130)
+[Impiö, M.]{.underline}, Raitoharju, J. (2025). Efficient curation of invertebrate image datasets using feature embeddings and automatic size comparison. In 2025 IEEE Symposia on Computational Intelligence for Energy, Transport and Environmental Sustainability (CIETES). IEEE.
+[Paper](https://arxiv.org/pdf/2412.15844?) | [Code](https://github.com/mikkoim/taxonomist-studio)
+
+[Impiö, M.]{.underline}, Raitoharju, J. (2024). Improving taxonomic image-based out-of-distribution detection with DNA barcodes. In 2024 32nd European Signal Processing Conference (EUSIPCO). IEEE.
+[Paper](https://arxiv.org/pdf/2406.18999)
 
 [Impiö, M.]{.underline}, Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995.
 [Paper](https://arxiv.org/abs/2209.12995)
 
 [Impiö, M.]{.underline}, Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE.
 [Paper](https://arxiv.org/abs/2104.05325) | [Code](https://github.com/mikkoim/ECG-CS)
+
+de Schaetzen, F., [Impiö, M.]{.underline}, Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., ... & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution.
+[Paper](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14130)
