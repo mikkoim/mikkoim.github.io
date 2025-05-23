@@ -30,11 +30,11 @@ listing:
 
 
 :::{#hero-heading}
-**I am a researcher and PhD candidate at the Finnish Environment Institute (Syke), working on deep learning and computer vision for or environmental monitoring.**
+**I am a researcher and PhD candidate at the Finnish Environment Institute (Syke), working on deep learning and computer vision for environmental monitoring.**
 
 My work focuses on topics like fine-grained classification, out-of-distribution detection and multimodal learning from images, videos and DNA data, with applications in biodiversity monitoring and remote sensing.
 
-I hold a MSc in Electrical Engineering from Tampere University, with a major in Signal Processing. During my studies I completed internships at Intel, where I worked with 3A algorithms, and at Vaisala, focusing on deep learning methods for predictive maintenance.
+I hold a MSc in Electrical Engineering from Tampere University, with a major in Signal Processing. During my studies I interned at Intel, where I worked with 3A algorithms, and at Vaisala, focusing on deep learning methods for predictive maintenance.
 
 I am a member in several expert groups, including:
 
