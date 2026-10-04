@@ -19,13 +19,6 @@ about:
     - icon: bluesky
       text: Bluesky
       href: https://bsky.app/profile/mikkoimpio.bsky.social
-
-listing:
-  - id: blog-listing
-    contents: blog
-    sort: "date desc"
-    type: default
-    max-items: 3
 ---
 
 
@@ -42,11 +35,6 @@ I am a member in several expert groups, including:
 - **Lukki**, Finland's national coordination group for nature information.
 - **GEO AI4EO**, a GEO subgroup focused on geospatial AI for Earth Observation.
 
-:::
-
-## [Blog](blog.qmd)
-
-:::{#blog-listing}
 :::
 
 

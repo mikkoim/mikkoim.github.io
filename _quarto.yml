@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - CNAME
 
 website:
   title: "Mikko Impiö"
@@ -13,11 +15,12 @@ website:
       - publications.qmd
       - resources.qmd
       - icon: github
-        href: https://github.com/
-  google-analytics:
-    tracking-id: "G-C434H3550N"
-    storage: none
+        href: https://github.com/mikkoim
 
 format:
   html:
     theme: [cosmo, custom.scss]
+    include-in-header:
+      - text: |
+          <script data-goatcounter="https://mikkoim.goatcounter.com/count"
+                  async src="//gc.zgo.at/count.js"></script>
