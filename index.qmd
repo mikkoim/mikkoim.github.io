@@ -19,6 +19,9 @@ about:
     - icon: bluesky
       text: Bluesky
       href: https://bsky.app/profile/mikkoimpio.bsky.social
+format:
+  html:
+    include-after-body: github-stars.html
 ---
 
 
@@ -27,7 +30,7 @@ about:
 
 My work focuses on topics like fine-grained classification, out-of-distribution detection and multimodal learning from images, videos and DNA data, with applications in biodiversity monitoring and remote sensing.
 
-I hold a MSc in Electrical Engineering from Tampere University, with a major in Signal Processing. During my studies I interned at Intel, where I worked with 3A algorithms, and at Vaisala, focusing on deep learning methods for predictive maintenance.
+I hold a MSc in Electrical Engineering from Tampere University, with a major in Signal Processing. During my studies I interned at **Intel**, where I worked with 3A algorithms, and at **Vaisala**, focusing on deep learning methods for predictive maintenance.
 
 I am a member in several expert groups, including:
 
@@ -38,39 +41,111 @@ I am a member in several expert groups, including:
 :::
 
 
-## [Publications](publications.qmd)
+## [Selected publications](publications.qmd)
 
-[Impiö, M.]{.underline}, Raitoharju, J. (2025). Efficient curation of invertebrate image datasets using feature embeddings and automatic size comparison. In 2025 IEEE Symposia on Computational Intelligence for Energy, Transport and Environmental Sustainability (CIETES). IEEE.
-[Paper](https://arxiv.org/pdf/2412.15844?) | [Code](https://github.com/mikkoim/taxonomist-studio)
+Google scholar: [[Link]]( https://scholar.google.com/citations?user=fBDisEYAAAAJ&hl=fi)
 
-[Impiö, M.]{.underline}, Raitoharju, J. (2024). Improving taxonomic image-based out-of-distribution detection with DNA barcodes. In 2024 32nd European Signal Processing Conference (EUSIPCO). IEEE.
-[Paper](https://arxiv.org/pdf/2406.18999)
+::: {.pub}
+![](images/pubs/cv_biomass.jpg){.pub-img}
 
-[Impiö, M.]{.underline}, Härmä, P., Tammilehto, A., Anttila, S., & Raitoharju, J. (2022). Habitat classification from satellite observations with sparse annotations. arXiv preprint arXiv:2209.12995.
-[Paper](https://arxiv.org/abs/2209.12995)
+::: {.pub-text}
+**Computer vision-based estimation of invertebrate biomass**\
+[**Mikko Impiö**, Philipp M. Rehsen, Jarrett Blair, Cecilie Mielec, Arne J. Beermann, Florian Leese, Toke T. Høye, Jenni Raitoharju]{.pub-authors}\
+[arXiv preprint arXiv:2603.06362, 2026]{.pub-venue}\
+[\[paper\]](https://arxiv.org/abs/2603.06362) [\[dataset\]](https://zenodo.org/records/19454159)
+:::
+:::
 
-[Impiö, M.]{.underline}, Yamaç, M., & Raitoharju, J. (2021, June). Multi-level reversible encryption for ECG signals using compressive sensing. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1005-1009). IEEE.
-[Paper](https://arxiv.org/abs/2104.05325) | [Code](https://github.com/mikkoim/ECG-CS)
+::: {.pub}
+![](images/pubs/aquamonitor.jpg){.pub-img}
 
-de Schaetzen, F., [Impiö, M.]{.underline}, Wagner, B., Nienaltowski, P., Arnold, M., Huber, M., ... & Stocker, R. (2023). The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams. Methods in Ecology and Evolution.
-[Paper](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14130)
+::: {.pub-text}
+**AquaMonitor: A multimodal multi-view image sequence dataset for real-life aquatic invertebrate biodiversity monitoring**\
+[**Mikko Impiö**, Philipp M. Rehsen, Tiina Laamanen, Arne J. Beermann, Florian Leese, Jenni Raitoharju]{.pub-authors}\
+[arXiv preprint arXiv:2505.22065, 2025]{.pub-venue}\
+[\[paper\]](https://arxiv.org/abs/2505.22065) [\[code\]](https://github.com/mikkoim/aquamonitor) [\[dataset\]](https://huggingface.co/datasets/mikkoim/aquamonitor)
+:::
+:::
 
-## Code
+::: {.pub}
+![](images/pubs/dnaimg.jpg){.pub-img}
 
-#### [`dinotool`](https://github.com/mikkoim/dinotool)
+::: {.pub-text}
+**Improving taxonomic image-based out-of-distribution detection with DNA barcodes**\
+[**Mikko Impiö**, Jenni Raitoharju]{.pub-authors}\
+[2024 32nd European Signal Processing Conference (EUSIPCO), 2024]{.pub-venue}\
+[\[paper\]](https://arxiv.org/pdf/2406.18999)
+:::
+:::
 
-Command-line tool for extracting DINO features for images and videos 
+::: {.pub}
+![](images/pubs/lappi.jpg){.pub-img}
 
-#### [`taxonomist`](https://github.com/mikkoim/taxonomist)
+::: {.pub-text}
+**Remote sensing the habitats of Northern Lapland – Final project report, parts 1 and 2**\
+[*Ylä-Lapin luonnon kaukokartoitus – Projektin loppuraportti, osat 1 ja 2*]{.pub-authors}\
+[Anna Tammilehto, Pekka Härmä, Minna Kallio, Markus Törmä, Arto Saikkonen, Seppo Tuominen, **Mikko Impiö**, Mika Heikkinen, Mikko Kervinen, Tytti Jussila, Kristin Böttcher, Elisa Pääkkö, Aira Kokko, Katariina Mäkelä, Saku Anttila]{.pub-authors}\
+[Metsähallituksen luonnonsuojelujulkaisuja, Sarja A 248 & 249, 2024]{.pub-venue}\
+[\[report 1\]](https://julkaisut.metsa.fi/wp-content/uploads/sites/2/2024/02/a248.pdf) [\[report 2\]](https://julkaisut.metsa.fi/wp-content/uploads/sites/2/2024/02/a249.pdf)
+:::
+:::
 
-A library for training deep learning models for species classification.
+::: {.pub}
+![](images/pubs/rodi.jpg){.pub-img}
 
-#### [`tiers`](https://github.com/mikkoim/tiers)
+::: {.pub-text}
+**The Riverine Organism Drift Imager: A new technology to study organism drift in rivers and streams**\
+[Frédéric de Schaetzen, **Mikko Impiö**, Basil Wagner, Patryk Nienaltowski, Michael Arnold, Martin Huber, Matthias Meyer, Jenni Raitoharju, Luiz G. M. Silva, Roman Stocker]{.pub-authors}\
+[Methods in Ecology and Evolution, 2023]{.pub-venue}\
+[\[paper\]](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14130)
+:::
+:::
 
-A hierarchical label handling library for Python
+::: {.pub}
+![](images/pubs/ecg.jpg){.pub-img}
 
-#### [`point-eo`](https://github.com/sykefi/point-eo)
+::: {.pub-text}
+**Multi-level reversible encryption for ECG signals using compressive sensing**\
+[**Mikko Impiö**, Mehmet Yamaç, Jenni Raitoharju]{.pub-authors}\
+[ICASSP 2021 – IEEE International Conference on Acoustics, Speech and Signal Processing, 2021]{.pub-venue}\
+[\[paper\]](https://arxiv.org/abs/2104.05325) [\[code\]](https://github.com/mikkoim/ECG-CS)
+:::
+:::
 
-A python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.
+## [Code](https://github.com/mikkoim)
 
-#### Other projects in [Github](https://github.com/mikkoim)
+Github: [[Link]](https://github.com/mikkoim)
+
+::: {.pub}
+![](images/pubs/dinotool.jpg){.pub-img}
+
+::: {.pub-text}
+**`dinotool`**\
+[Command-line tool for extracting DINO, CLIP, SigLIP2, TIPSv2, RADIO, features for images and videos]{.pub-venue}\
+[\[code\]](https://github.com/mikkoim/dinotool) [★]{.gh-stars data-repo="mikkoim/dinotool"}
+:::
+:::
+
+::: {.pub}
+::: {.pub-text}
+**`taxonomist`**\
+[A library for training deep learning models for species classification.]{.pub-venue}\
+[\[code\]](https://github.com/mikkoim/taxonomist) [★]{.gh-stars data-repo="mikkoim/taxonomist"}
+:::
+:::
+
+::: {.pub}
+::: {.pub-text}
+**`tiers`**\
+[A hierarchical label handling library for Python]{.pub-venue}\
+[\[code\]](https://github.com/mikkoim/tiers) [★]{.gh-stars data-repo="mikkoim/tiers"}
+:::
+:::
+
+::: {.pub}
+::: {.pub-text}
+**`point-eo`**\
+[A python libary that makes it simple to sample points from large rasters, fit ML models and perform inference on larger-than-memory rasters.]{.pub-venue}\
+[\[code\]](https://github.com/sykefi/point-eo) [★]{.gh-stars data-repo="sykefi/point-eo"}
+:::
+:::

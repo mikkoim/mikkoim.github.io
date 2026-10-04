@@ -1,0 +1,37 @@
+<script>
+// Fills in `.gh-stars[data-repo]` elements with the repo's GitHub star count.
+// Counts are cached in localStorage for an hour to stay under the unauthenticated
+// API rate limit; if a lookup fails the element simply stays hidden.
+(function () {
+  var TTL = 60 * 60 * 1000;
+
+  function show(el, count) {
+    el.textContent = "★ " + count.toLocaleString();
+    el.classList.add("loaded");
+  }
+
+  function cached(repo) {
+    try {
+      var c = JSON.parse(localStorage.getItem("gh-stars:" + repo));
+      if (c && Date.now() - c.t < TTL) return c.n;
+    } catch (e) {}
+    return null;
+  }
+
+  document.querySelectorAll(".gh-stars[data-repo]").forEach(function (el) {
+    var repo = el.getAttribute("data-repo");
+    var n = cached(repo);
+    if (n !== null) return show(el, n);
+    fetch("https://api.github.com/repos/" + repo)
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        show(el, d.stargazers_count);
+        try {
+          localStorage.setItem("gh-stars:" + repo,
+            JSON.stringify({ t: Date.now(), n: d.stargazers_count }));
+        } catch (e) {}
+      })
+      .catch(function () {});
+  });
+})();
+</script>
