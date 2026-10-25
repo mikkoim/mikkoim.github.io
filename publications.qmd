@@ -7,10 +7,10 @@ page-layout: full
 ![](images/pubs/cv_biomass.jpg){.pub-img}
 
 ::: {.pub-text}
-**Computer vision-based estimation of invertebrate biomass**\
+**Computer vision-based estimation of small arthropod biomass**\
 [**Mikko Impiö**, Philipp M. Rehsen, Jarrett Blair, Cecilie Mielec, Arne J. Beermann, Florian Leese, Toke T. Høye, Jenni Raitoharju]{.pub-authors}\
-[arXiv preprint arXiv:2603.06362, 2026]{.pub-venue}\
-[\[paper\]](https://arxiv.org/abs/2603.06362) [\[dataset\]](https://zenodo.org/records/19454159)
+[Ecological Informatics, 2026]{.pub-venue}\
+[\[paper\]](https://doi.org/10.1016/j.ecoinf.2026.104091) [\[code\]](https://github.com/mikkoim/invertebrate-biomass) [\[dataset\]](https://doi.org/10.5281/zenodo.20019571)
 :::
 :::
 
